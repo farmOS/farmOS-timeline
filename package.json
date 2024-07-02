@@ -1,0 +1,26 @@
+{
+  "name": "@farmos.org/farmos-timeline",
+  "version": "0.0.0",
+  "description": "Timeline library used in farmOS.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farmOS/farmOS-timeline.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint src",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "eslint": "^9.6.0",
+    "globals": "^15.8.0",
+    "vite": "^5.3.1",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "dependencies": {
+    "moment": "^2.30.1",
+    "svelte-gantt": "^4.4.0"
+  }
+}

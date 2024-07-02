@@ -1,4 +1,4 @@
-# farmOS Map
+# farmOS Timeline
 
 [![Licence](https://img.shields.io/badge/Licence-MIT-blue.svg)](https://opensource.org/licenses/MIT/)
 [![Release](https://img.shields.io/github/release/farmOS/farmOS-timeline.svg?style=flat)](https://github.com/farmOS/farmOS-timeline/releases)

@@ -44,7 +44,16 @@ const createInstance = ({ target, options = {}}) => {
     fitWidth: true,
     from: Date.now()-86400,
     to: Date.now(),
+    headers: [
+      {unit: 'year', format: 'YYYY'},
+      {unit: 'month', format: 'MMMM'},
+    ],
     zoomLevels: defaultZoomLevels,
+    columnUnit: 'day',
+    columnOffset: 7,
+    rowHeight: 34,
+    rowPadding: 8,
+    reflectOnParentRows: false,
   };
   return {
     timeline: new SvelteGantt({

@@ -1,5 +1,6 @@
 import {MomentSvelteGanttDateAdapter, SvelteGantt, SvelteGanttTable} from "svelte-gantt";
 import moment from "moment/moment";
+import {addRows, addTasks} from "./methods";
 
 const defaultZoomLevels = [
   {
@@ -33,6 +34,8 @@ const defaultZoomLevels = [
 
 const createInstance = ({ target, options = {}}) => {
   const default_options = {
+    highlightPast: true,
+    padding: [86400 * 7, 86400 * 20],
     props: {},
   };
   options = {...default_options, ...options};
@@ -42,8 +45,8 @@ const createInstance = ({ target, options = {}}) => {
     tableHeaders: [{ title: target.dataset?.tableHeader, property: 'label', type: 'tree' }],
     tableWidth: 240,
     fitWidth: true,
-    from: Date.now()-86400,
-    to: Date.now(),
+    from: Date.now() - options.padding[0] * 1000,
+    to: Date.now() + options.padding[1] * 1000,
     headers: [
       {unit: 'year', format: 'YYYY'},
       {unit: 'month', format: 'MMMM'},
@@ -54,12 +57,18 @@ const createInstance = ({ target, options = {}}) => {
     rowHeight: 34,
     rowPadding: 8,
     reflectOnParentRows: false,
+    rows: [],
   };
   return {
+    highlightPast: options.highlightPast,
+    padding: options.padding,
+    rows: [],
     timeline: new SvelteGantt({
       target: target,
       props: {...default_props, ...options.props},
     }),
+    addRows,
+    addTasks,
   }
 }
 

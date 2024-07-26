@@ -15,4 +15,3 @@ if (typeof window.farmOS === 'undefined') {
 }
 window.farmOS.timeline = INSTANCE;
 window.farmOS.timeline.TimelineInstanceManager = TimelineInstanceManager;
-export default INSTANCE;

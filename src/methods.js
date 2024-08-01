@@ -24,7 +24,6 @@ export function addTasks(tasks, updateRange = true) {
         first = tasks[i].from;
       }
       tasks[i].to = new Date(tasks[i].to);
-      tasks[i].to = new Date(tasks[i].to);
       if (!last || tasks[i].to > last) {
         last = tasks[i].to;
       }

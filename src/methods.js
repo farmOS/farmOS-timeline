@@ -12,9 +12,10 @@ export function addRows(rows) {
 export function addTasks(tasks, updateRange = true) {
 
   // Keep track of first/last timestamps.
+  // Read current time range integer values from gantt timeline utils.
   let now = new Date();
-  let first = this.timeline?.util?.from ? new Date(this.timeline?.util?.from) + this.padding[0] * 1000 : null;
-  let last = this.timeline?.util?.to ? new Date(this.timeline?.util?.to) - this.padding[1] * 1000 : null;
+  let first = this.timeline?.util?.from ? new Date(this.timeline?.util?.from + this.padding[0] * 1000) : null;
+  let last = this.timeline?.util?.to ? new Date(this.timeline?.util?.to - this.padding[1] * 1000) : null;
 
   // Update the timeline range.
   if (updateRange) {
@@ -28,9 +29,11 @@ export function addTasks(tasks, updateRange = true) {
         last = tasks[i].to;
       }
     }
+    // Update the range of the timeline with new values including padding.
+    // The from and to props must be valid Date objects or null.
     this.timeline.$set({
-      from: new Date(first - this.padding[0] * 1000),
-      to: new Date(last + this.padding[1] * 1000),
+      from: first ? new Date(first.getTime() - this.padding[0] * 1000) : null,
+      to: last ? new Date(last.getTime() + this.padding[1] * 1000) : null,
     })
   }
 

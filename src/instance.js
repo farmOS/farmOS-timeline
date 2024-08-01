@@ -35,7 +35,8 @@ const defaultZoomLevels = [
 const createInstance = ({ target, options = {}}) => {
   const default_options = {
     highlightPast: true,
-    padding: [86400 * 7, 86400 * 20],
+    // Set default padding to 7 days converted to seconds.
+    padding: [86400 * 7, 86400 * 7],
     props: {},
   };
   options = {...default_options, ...options};

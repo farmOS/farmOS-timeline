@@ -36,6 +36,8 @@ const defaultZoomLevels = [
 ];
 
 const createInstance = ({ target, options = {}}) => {
+
+  // Default options for the farmos-timeline library.
   const default_options = {
     highlightPast: true,
     // Set default padding to 7 days converted to seconds.
@@ -43,6 +45,9 @@ const createInstance = ({ target, options = {}}) => {
     props: {},
   };
   options = {...default_options, ...options};
+
+  // Default props for svelte-gantt.
+  // For all options see https://anovokmet.github.io/svelte-gantt/docs/options/gantt
   const default_props = {
     ganttTableModules: [SvelteGanttTable],
     dateAdapter: new MomentSvelteGanttDateAdapter(moment),

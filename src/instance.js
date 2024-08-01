@@ -2,6 +2,9 @@ import {MomentSvelteGanttDateAdapter, SvelteGantt, SvelteGanttTable} from "svelt
 import moment from "moment/moment";
 import {addRows, addTasks} from "./methods";
 
+// Provide default zoom levels. This is adapted from the svelte-gantt
+// documentation for viewing tasks across months, weeks and days.
+// See https://anovokmet.github.io/svelte-gantt/docs/options/zoom
 const defaultZoomLevels = [
   {
     headers: [

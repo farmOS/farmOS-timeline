@@ -9,7 +9,7 @@ export function addRows(rows) {
 }
 
 // Helper function to add tasks.
-export function addTasks(tasks, updateRange = true) {
+export function addTasks(tasks, { updateRange = true } = {}) {
 
   // Read current time range integer values from gantt timeline utils.
   // Remove padding from range values for easy comparison with tasks.

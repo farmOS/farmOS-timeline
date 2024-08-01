@@ -71,6 +71,8 @@ const createInstance = ({ target, options = {}}) => {
   return {
     highlightPast: options.highlightPast,
     padding: options.padding,
+    // @todo Remove this.rows state.
+    // See https://github.com/ANovokmet/svelte-gantt/issues/231
     rows: [],
     timeline: new SvelteGantt({
       target: target,

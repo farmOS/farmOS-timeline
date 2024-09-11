@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "moment": "^2.30.1",
-    "svelte-gantt": "^4.4.0"
+    "svelte-gantt": "^4.4.2"
   }
 }

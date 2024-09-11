@@ -1,11 +1,6 @@
 // Helper function to add rows.
 export function addRows(rows) {
-  // @todo Remove this.rows state and use timeline.updateRows() once working.
-  // See https://github.com/ANovokmet/svelte-gantt/issues/231
-  this.rows.push(...rows);
-  this.timeline.$set({
-    rows: this.rows,
-  });
+  this.timeline.updateRows(rows);
 }
 
 // Helper function to add tasks.

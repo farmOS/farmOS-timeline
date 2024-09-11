@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Change addTasks method to accept an object with updateRange
+- Require svelte-gantt ^4.4.2
 
 ### Fixed
 

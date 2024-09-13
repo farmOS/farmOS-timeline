@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v0.0.2] - 2024-09-13
+
 ### Changed
 
 - Change addTasks method to accept an object with updateRange
